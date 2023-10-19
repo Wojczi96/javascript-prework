@@ -7,3 +7,8 @@ function printMessage(msg){
 function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
+
+var computerMove, playerMove;
+computerMove = 'kamień';
+playerMove = 'papier';
+printMessage('Zagrałem ' + computerMove + playerMove + '! Jeśli Twój ruch to papier, to wygrywasz!');
