@@ -41,3 +41,21 @@ h1 {
 #buttons button {
     font-size: 20px;
 }
+
+/* Scores */
+.playerScore {
+    color: white;
+}
+.computerScore {
+    color: white;
+}
+
+/* Intro */
+div.hidden {
+    opacity: 0;
+    pointer-events: 0;
+}
+div.visible {
+    opacity: 1;
+    pointer-events: all;
+}
