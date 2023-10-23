@@ -30,14 +30,14 @@ const game = () => {
   function getMoveName(argMoveId) {
     console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
     if (argMoveId == 1) {
-      return 'kamień';
+      return 'rock';
     } else if (argMoveId == 2) {
-      return 'papier';
+      return 'paper';
     } else if (argMoveId == 3) {
-      return 'nożyce';
+      return 'scissors';
     } else {
-      printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
-      return 'kamień';
+      printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "rock".');
+      return 'rock';
     }
   }
 
@@ -53,26 +53,26 @@ const game = () => {
   // Wynik
   function displayResult(argPlayerMove, argComputerMove) {
     // console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
-    if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
-      printMessage('Wygrywasz!');
+    if (argPlayerMove == 'paper' && argComputerMove == 'rock') {
+      printMessage('You win!'+'');
       playerScore++;
       getScores();
-    } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
-      printMessage('Wygrywasz!');
+    } else if (argPlayerMove == 'scissors' && argComputerMove == 'paper') {
+      printMessage('You win!'+'');
       playerScore++;
       getScores();
-    } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
-      printMessage('Wygrywasz!');
+    } else if (argPlayerMove == 'rock' && argComputerMove == 'scissors') {
+      printMessage('You win!'+'');
       playerScore++;
       getScores();
     } else if (argComputerMove == argPlayerMove) {
-      printMessage('Remis!');
+      printMessage('Draw!'+'');
     } else {
-      printMessage('Przegrywasz :(');
+      printMessage('You loose :('+'');
       computerScore++;
       getScores();
     }
-    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+    printMessage('I played ' + argComputerMove + ', and you ' + argPlayerMove);
   }
 
   // Buttony
@@ -91,11 +91,11 @@ const game = () => {
   }
 
   buttonRock = document.getElementById('button-rock');
-  buttonRock.addEventListener('click', function(){ buttonClicked('kamień') });
+  buttonRock.addEventListener('click', function(){ buttonClicked('rock') });
   buttonPaper = document.getElementById('button-paper');
-  buttonPaper.addEventListener('click', function(){ buttonClicked('papier') });
+  buttonPaper.addEventListener('click', function(){ buttonClicked('paper') });
   buttonScissors = document.getElementById('button-scissors');
-  buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce') });
+  buttonScissors.addEventListener('click', function(){ buttonClicked('scissors') });
 
   introGame();
 }
